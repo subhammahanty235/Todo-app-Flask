@@ -4,7 +4,7 @@ from flask import Flask, redirect ,render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-from sqlalchemy import null
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
@@ -34,11 +34,6 @@ def todofunc():
     print(allTodos)
     return render_template('index.html' ,allTodo = allTodos )
 
-@app.route('/showall')
-def show():
-    allTodos = Todo.query.all()
-    print(allTodos)
-    return "show"
 
 @app.route('/delete/<int:id>')
 def delete(id):
