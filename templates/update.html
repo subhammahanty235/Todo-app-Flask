@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-3">
+    <h3 class="text-center">Update a todo</h3>
+    <form action="/update/{{todo.sno}}" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Todo Title</label>
+          <input type="text" class="form-control" id="title" name="title" value="{{todo.title}}">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Todo Description</label>
+          <input type="text" class="form-control" id="desc" name="desc" value="{{todo.desc}}">
+        </div>
+        <!-- <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+  </div>
+{% endblock body %}
